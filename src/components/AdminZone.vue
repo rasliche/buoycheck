@@ -1,5 +1,11 @@
 <template lang="html">
 <div>
+    <div>
+        <h1>Admin Stats</h1>
+        <p>{{ totalBuoys }}</p>
+        <!-- <p>All Buoys: {{ allBuoys }}</p> -->
+        <p>Present: {{ presentBuoys.length }} / {{ totalBuoys }}</p>
+    </div>
     <div
         class="py-8"
         style="width: 800px;"
@@ -11,8 +17,8 @@
                     class="buoy rounded-full text-2xl hover:cursor-pointer shadow-lg"
                     style="height:100px;width:100px;"
                     :class="{
-                    'bg-yellow-light border-4 border-black': buoy.present,
-                    'bg-blue-lightest border-2 border-gray': !buoy.present}"
+                        'bg-yellow-light border-4 border-black': buoy.present,
+                        'bg-blue-lightest border-2 border-gray': !buoy.present}"
                     @click="buoy.present = !buoy.present">
                     <p class="py-4">{{ buoy.id }}</p>
                 </div>
@@ -32,6 +38,31 @@ export default {
     computed: {
         zones() {
             return this.$store.state.zones;
+        },
+        allBuoys() {
+            let all = [];
+            for (let zone in this.zones) {
+                const buoys = this.$store.state.zones[zone].buoys;
+                for (let buoy in buoys) {
+                    all.push(buoys[buoy]);
+                }
+            }
+            // console.log(all);
+            return all;
+        },
+        totalBuoys() {
+            // let i = 0;
+            // for (let zone in this.zones) {
+            //     i += this.$store.state.zones[zone].buoys.length;
+            //     // console.log(typeof zone);
+            //     // // the following is undefined. Why???
+            //     // console.log(zone);
+            //     console.log(i);
+            // }
+            return this.allBuoys.length;
+        },
+        presentBuoys() {
+            return this.allBuoys.filter(b => b.present === true);
         }
     },
     methods: {
