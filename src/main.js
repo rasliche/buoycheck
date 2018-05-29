@@ -6,6 +6,10 @@ import './registerServiceWorker'
 
 Vue.config.productionTip = false
 
+Vue.filter('percent', function (value) {
+  return (value * 100).toFixed() + "%";
+})
+
 new Vue({
   router,
   store,
