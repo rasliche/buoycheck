@@ -4,7 +4,7 @@
         <h1>Admin Stats</h1>
         <p>{{ totalBuoys }}</p>
         <!-- <p>All Buoys: {{ allBuoys }}</p> -->
-        <p>Present: {{ presentBuoys.length }} / {{ totalBuoys }}</p>
+        <p>Present: {{ presentBuoys.length }} / {{ totalBuoys }} ({{ presentBuoys.length / totalBuoys | percent }})</p>
     </div>
     <div
         class="py-8"
