@@ -1,24 +1,48 @@
 <template lang="html">
 <div class="admin">
-    {{ dbRes }}
+    <h1>Admin Page</h1>
+
+    <NewBuoy></NewBuoy>
+    <Buoy />
+    <Buoys />
+
+    <NewZone />
+    <Zone />
+    <Zones />
+
+<!-- Previous Iteration Below     -->
+    <!-- {{ dbRes }}
     <div>
         <h1>Admin Stats</h1>
         <p>{{ totalBuoys }}</p>
-        <!-- <p>All Buoys: {{ allBuoys }}</p> -->
+        <p>All Buoys: {{ allBuoys }}</p>
         <p>Present: {{ presentBuoys.length }} / {{ totalBuoys }} ({{ (presentBuoys.length / totalBuoys) | percent }})</p>
     </div>
-    <Zone v-for="zone in zones" :zone="zone"></Zone>
+    <Zone v-for="zone in zones" :zone="zone"></Zone> -->
 </div>
 </template>
 
 <script>
 import axios from 'axios'
 // @ is an alias to /src
-import Zone from '@/components/Zone.vue'
+import NewBuoy from '@/components/NewBuoy'
+import Buoy from '@/components/Buoy'
+import Buoys from '@/components/Buoys'
+
+import NewZone from '@/components/NewZone'
+import Zone from '@/components/Zone'
+import Zones from '@/components/Zones'
 
 export default {
   name: 'home',
-  components: { Zone },
+  components: {
+      NewBuoy,
+      Buoy,
+      Buoys,
+      NewZone,
+      Zone,
+      Zones
+  },
   data() {
       return {
             dbRes: []

@@ -1,12 +1,13 @@
 <template lang="html">
 <div>
-    <h1>Do you see {{ zoneBuoyCount || "any" }} yellow SPA buoys?</h1>
+    <h1>Buoy Report</h1>
+    <!-- <h1>Do you see {{ zoneBuoyCount || "any" }} yellow SPA buoys?</h1>
     <input type="text" v-model.number="observedBuoyCount">
     <input type="submit" @click="submitReport">
     <div v-if="reportSubmittedSuccess">
         <p>Thank you for your report!</p>
         <p>You reported {{ observedBuoyCount }} / {{ zoneBuoyCount }} were present.</p>
-    </div>
+    </div> -->
 </div>
 </template>
 

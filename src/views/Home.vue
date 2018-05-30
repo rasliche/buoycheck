@@ -1,19 +1,19 @@
 <template>
 <div class="home">
-    <h1>Please help us keep the mooring buoy program busy!</h1>
-    <h3>Report missing buoys!</h3>
+    <h1>Home Page</h1>
+    <Zones />
 </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Zone from '@/components/Zone.vue'
+import Zones from '@/components/Zones.vue'
 import Report from '@/components/Report.vue'
 
 export default {
   name: 'home',
   components: {
-    Zone,
+    Zones,
     Report
   },
   data() {

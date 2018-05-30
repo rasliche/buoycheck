@@ -1,6 +1,7 @@
 <template lang="html">
 <div>
-    <div
+    <h1>Zone Component</h1>
+    <!-- <div
         class="py-8"
         style="width: 800px;">
         <h1>{{ zone.label }}</h1>
@@ -17,7 +18,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- <div class="buoy-map"></div> -->
 </div>
 </template>

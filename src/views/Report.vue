@@ -1,8 +1,7 @@
 <template>
 <div class="report">
-    <div>
-        <Report />
-    </div>
+    <h1>Report Page</h1>
+    <Report />
 </div>
 </template>
 
