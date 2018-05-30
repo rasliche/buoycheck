@@ -2,8 +2,7 @@
 <div>
     <div
         class="py-8"
-        style="width: 800px;"
-        v-for="zone in zones">
+        style="width: 800px;">
         <h1>{{ zone.label }}</h1>
         <div class="buoy-grid">
             <div v-for="buoy in zone.buoys">
@@ -11,8 +10,8 @@
                     class="buoy rounded-full text-2xl hover:cursor-pointer shadow-lg"
                     style="height:100px;width:100px;"
                     :class="{
-                    'bg-yellow-light border-4 border-black': buoy.present,
-                    'bg-blue-lightest border-2 border-gray': !buoy.present}"
+                        'bg-yellow-light border-4 border-black': buoy.present,
+                        'bg-blue-lightest border-2 border-gray': !buoy.present}"
                     @click="buoy.present = !buoy.present">
                     <p class="py-4">{{ buoy.id }}</p>
                 </div>
@@ -25,6 +24,7 @@
 
 <script>
 export default {
+    props: ['zone'],
     data() {
         return {
         }
